@@ -469,8 +469,8 @@
 
         <div class="comparison-container">
             <div class="comparison-wrapper" role="img" aria-label="Image comparison slider">
-    <img src="kogilu/1.jpg" alt="Infrared color version of image 1" class="img-color" id="colorImg">
-    <img src="kogilu/1bw.jpg" alt="Monochrome version of image 1" class="img-bw" id="bwImg">
+    <img src="kimages/1.jpg" alt="Infrared color version of image 1" class="img-color" id="colorImg">
+    <img src="kimages/1bw.jpg" alt="Monochrome version of image 1" class="img-bw" id="bwImg">
     <div class="slider" id="slider" role="slider" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" aria-label="Image comparison slider" tabindex="0"></div>
 </div>
 
@@ -532,9 +532,9 @@
 
         function loadImage(num) {
     currentImage = num;
-    colorImg.src = `kogilu/${num}.jpg`;
+    colorImg.src = `kimages/${num}.jpg`;
     colorImg.alt = `Infrared color version of image ${num}`;
-    bwImg.src = `kogilu/${num}bw.jpg`;
+    bwImg.src = `kimages/${num}bw.jpg`;
     bwImg.alt = `Monochrome version of image ${num}`;
     currentNumber.textContent = num;
 
