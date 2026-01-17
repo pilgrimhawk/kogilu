@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome - Image Gallery</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f50c0c 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #ede4e4;
+            border-radius: 20px;
+            padding: 60px 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        /* Google Translate positioning */
+        #google_translate_element {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 3em;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            color: #667eea;
+            font-size: 1.3em;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+
+        .intro-section {
+            color: #555;
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .intro-section p {
+            margin-bottom: 20px;
+        }
+
+        .intro-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 1px 27px;
+            background: linear-gradient(135deg, #f50c0c 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 1.1em;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+
+        .highlight {
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .divider {
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 30px auto;
+            border-radius: 2px;
+        }
+
+        pre.poem-pre {
+            font-family: Tahoma, Geneva, Verdana, sans-serif;
+            white-space: pre-wrap;
+            font-style: italic;
+        }
+
+        /* Creative Commons License Styling */
+        .cc-license {
+            margin-top: 40px;
+            padding: 20px;
+            border-top: 2px solid #ddd;
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .cc-license-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .cc-logo {
+            display: flex;
+            gap: 5px;
+            align-items: center;
+        }
+
+        .cc-logo img {
+            height: 31px;
+            width: auto;
+        }
+
+        .cc-text {
+            line-height: 1.6;
+        }
+
+        .cc-text a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .cc-text a:hover {
+            text-decoration: underline;
+        }
+
+        /* Remove Google Translate banner */
+        .goog-te-banner-frame.skiptranslate {
+            display: none !important;
+        }
+
+        body {
+            top: 0px !important;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 30px;
+                padding-top: 80px;
+            }
+
+            #google_translate_element {
+                top: 10px;
+                right: 10px;
+            }
+
+            h1 {
+                font-size: 2.2em;
+            }
+
+            .subtitle {
+                font-size: 1.1em;
+            }
+
+            .intro-section {
+                font-size: 1em;
+            }
+
+            .cta-button {
+                padding: 8px 15px;
+                font-size: 1em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 30px 20px;
+                padding-top: 70px;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .subtitle {
+                font-size: 1em;
+            }
+
+            .intro-section {
+                font-size: 0.95em;
+                line-height: 1.6;
+            }
+
+            .cta-button {
+                padding: 10px 25px;
+                font-size: 0.95em;
+            }
+
+            .cc-license {
+                font-size: 0.85em;
+                padding: 15px 10px;
+            }
+            
+            .cc-logo img {
+                height: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Google Translate Element -->
+        <div id="google_translate_element"></div>
+
+        <header>
+            <h1>Welcome to the Image Gallery</h1>
+            <div class="divider"></div>
+            <p class="subtitle">Exploring the Art of Infrared and Monochrome Photography</p>
+        </header>
+
+        <div class="intro-section">
+            <p>
+                Welcome to our curated collection of <span class="highlight">75 stunning photographs</span> 
+                showcasing the dramatic contrast between infrared color and monochrome imagery. 
+                This gallery offers a unique perspective on the world around us, revealing hidden 
+                details and artistic interpretations that traditional photography cannot capture.
+            </p>
+
+            <p>
+                <span class="highlight">Infrared photography</span> captures light beyond the visible 
+                spectrum, creating otherworldly landscapes where foliage glows white and skies turn 
+                dramatically dark. When converted to <span class="highlight">monochrome</span>, these 
+                images take on a timeless, ethereal quality that emphasizes texture, contrast, and form.
+            </p>
+
+            <p>
+                Use our interactive comparison slider to explore each photograph in detail. Discover 
+                how the same scene transforms between color infrared and black & white interpretations, 
+                and appreciate the unique artistic vision each rendering provides.
+            </p>
+            <p>
+                Use our interactive comparison slider to explore each photograph in detail. Discover 
+                how the same scene transforms between color infrared and black & white interpretations, 
+                and appreciate the unique artistic vision each rendering provides.
+            </p>
+            <p>
+                Use our interactive comparison slider to explore each photograph in detail. Discover 
+                how the same scene transforms between color infrared and black & white interpretations, 
+                and appreciate the unique artistic vision each rendering provides.
+            </p>
+            <p>
+                Use our interactive comparison slider to explore each photograph in detail. Discover 
+                how the same scene transforms between color infrared and black & white interpretations, 
+                and appreciate the unique artistic vision each rendering provides.
+            </p>
+            <p>
+                Use our interactive comparison slider to explore each photograph in detail. Discover 
+                how the same scene transforms between color infrared and black & white interpretations, 
+                and appreciate the unique artistic vision each rendering provides.
+            </p>
+            <p>
+                Use our interactive comparison slider to explore each photograph in detail. Discover 
+                how the same scene transforms between color infrared and black & white interpretations, 
+                and appreciate the unique artistic vision each rendering provides.
+            </p>
+            <p>
+                Use our interactive comparison slider to explore each photograph in detail. Discover 
+                how the same scene transforms between color infrared and black & white interpretations, 
+                and appreciate the unique artistic vision each rendering provides.
+            </p>
+            <p>
+                Use our interactive comparison slider to explore each photograph in detail. Discover 
+                how the same scene transforms between color infrared and black & white interpretations, 
+                and appreciate the unique artistic vision each rendering provides.
+            </p>
+            <p>
+                Use our interactive comparison slider to explore each photograph in detail. Discover 
+                how the same scene transforms between color infrared and black & white interpretations, 
+                and appreciate the unique artistic vision each rendering provides.
+            </p>
+            <p>
+                Use our interactive comparison slider to explore each photograph in detail. Discover 
+                how the same scene transforms between color infrared and black & white interpretations, 
+                and appreciate the unique artistic vision each rendering provides.
+            </p>
+            <p>
+                Use our interactive comparison slider to explore each photograph in detail. Discover 
+                how the same scene transforms between color infrared and black & white interpretations, 
+                and appreciate the unique artistic vision each rendering provides.
+            </p>
+            <p><i>
+                Use our interactive comparison slider to explore each photograph in detail. Discover 
+                how the same scene transforms between color infrared and black & white interpretations, 
+                and appreciate the unique artistic vision each rendering provides.
+            </i></p>
+            <pre class="poem-pre">no one leaves home unless home 
+is the mouth of a shark you only 
+run for the border when you see the 
+whole city running as well
+your neighbors running faster than you breath 
+bloody in their throats the boy you went to school 
+with who kissed you dizzy behind 
+the old tin factory is holding a gun 
+bigger than his body you only leave 
+home when home won't let you stay.</pre>
+          
+            <p style="text-align: center;">
+                <a href="index.html" class="cta-button">Enter the Wasteland →</a>
+            </p>
+
+            <!-- Creative Commons License -->
+            <div class="cc-license">
+                <div class="cc-license-content">
+                    <div class="cc-logo">
+                        <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="CC">
+                        <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="BY">
+                        <img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt="NC">
+                    </div>
+                    <div class="cc-text">
+                        This work is licensed under a 
+                        <a href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="license noopener noreferrer">
+                            Creative Commons Attribution-NonCommercial 4.0 International License
+                        </a>.<br>
+                        You are free to share and adapt this material for non-commercial purposes with attribution.<br>
+                        For any discussion on this please write to me at <a href="mailto:pilgrimhawk@gmail.com">pilgrimhawk@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+        }
+    </script>
+
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>
