@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bearing witness in Kogilu Wastelands</title>
+    <title>Bearing witness in Kogilu Wastelands, Bengaluru</title>
     <style>
         * {
             margin: 0;
@@ -13,915 +13,409 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #f50c0c 100%);
+            background: linear-gradient(135deg, #f50c0c 0%, #764ba2 100%);
             min-height: 100vh;
             padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .container {
-            max-width: 1100px;
+            max-width: 1000px;
             margin: 0 auto;
             background: #ede4e4;
             border-radius: 20px;
-            padding: 20px;
+            padding: 60px 40px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            position: relative;
         }
 
+        /* Google Translate positioning */
+        #google_translate_element {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+.subtitle1 {
+            color: #010731;
+            font-size: 1.3em;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+.subtitle2 {
+    color: #3c0e01;
+    font-size: .85em;
+    line-height: 1.4;
+    margin-bottom: 10px;
+    text-align: left;
+}
         header {
             text-align: center;
-            margin-bottom: 10px;
+            margin-bottom: 40px;
         }
 
         h1 {
             color: #333;
-            font-size: 1.5em;
-            margin-bottom: 5px;
-        }
-
-        .intro-text {
-            color: #cf0a09;
-            font-size: 1em;
+            font-size: 3em;
+            margin-bottom: 20px;
             line-height: 1.2;
-            max-width: 800px;
-            margin: 0 auto;
         }
 
-        .comparison-container {
-            position: relative;
-            width: 100%;
-            max-width: 900px;
-            margin: 0 auto 40px;
-            overflow: hidden;
+        .subtitle {
+            color: #010d40;
+            font-size: 1.0em;
+            font-weight: 400;
+            margin-bottom: 20px;
+            alignment: left;
+        }
+        
+        .intro-section {
+            color: #0c0b0b;
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .intro-section p {
+            margin-bottom: 20px;
+        }
+
+        .intro-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 1px 27px;
+            background: linear-gradient(135deg, #f50c0c 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
             border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        .comparison-wrapper {
-            position: relative;
-            width: 100%;
-            height: 600px;
-            background: #f0f0f0;
-        }
-
-        .comparison-wrapper img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            user-select: none;
-        }
-
-        .img-color {
-            z-index: 2;
-            clip-path: inset(0 50% 0 0);
-        }
-
-        .img-bw {
-            z-index: 1;
-        }
-
-        .slider {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            width: 1px;
-            height: 100%;
-            background: white;
-            z-index: 3;
-            cursor: ew-resize;
-            transform: translateX(-50%);
-        }
-
-        .slider::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 30px;
-            height: 30px;
-            background: white;
-            border-radius: 50%;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-        }
-
-        .slider::after {
-            content: '◀ ▶';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: #CF0A09;
-            font-size: 11px;
-            font-weight: bold;
-            letter-spacing: 1px;
-        }
-
-
-
-.label::before {
-    content: '← ';
-    font-size: 1.2em;
-}
-
-.label1::after {
-    content: ' →';
-    font-size: 1.2em;
-}
-
-.label {
-    font-size: 1em;
-    font-weight: 600;
-    color: #F50C15;
-    letter-spacing: 1px;
-}
-
-.label1 {
-    font-size: 1em;
-    font-weight: 600;
-    color: #000000;
-    letter-spacing: 1px;
-}
-
-.image-selector {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    padding: 20px 30px;
-}
-
-        .image-btn {
-            width: 25px;
-            height: 25px;
-            border: 2px solid #667eea;
-            background: white;
-            color: #667eea;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 12px;
+            font-size: 1.1em;
             font-weight: 600;
             transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
         }
 
-        .image-btn:hover {
-            background: #010827;
-            color: white;
+        .cta-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
         }
 
-        .image-btn.active {
-            background: #CF0A09;
-            color: white;
-            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        .highlight {
+            color: #667eea;
+            font-weight: 600;
         }
-.image-labels {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    padding: 1px 2px;
-    background: #f8f9fa;
-    border-radius: 8px;
+
+        .divider {
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 30px auto;
+            border-radius: 2px;
+        }
+
+       pre.poem-pre {
+    font-family: Tahoma, Geneva, Verdana, sans-serif;
+    white-space: pre-wrap;
+    font-style: italic;
+    margin-bottom: 10px;
 }
-        /* Navigation styles */
-        .image-navigation {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 30px;
-            margin-top: 10px;
-            margin-bottom: 10px;
+     pre.poem-pre1 {
+    font-family: Tahoma, Geneva, Verdana, sans-serif;
+    white-space: pre-wrap;
+    font-style: italic;
+    margin-bottom: 5px;
+    margin-bottom: 1px;
+}
+
+        /* Creative Commons License Styling */
+        .cc-license {
+            margin-top: 40px;
+            padding: 20px;
+            border-top: 2px solid #ddd;
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
         }
 
-        .nav-link {
-            color: #cf0a09;
+        .cc-license-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .cc-logo {
+            display: flex;
+            gap: 5px;
+            align-items: center;
+        }
+
+        .cc-logo img {
+            height: 31px;
+            width: auto;
+        }
+
+        .cc-text {
+            line-height: 1.6;
+        }
+
+        .cc-text a {
+            color: #667eea;
             text-decoration: none;
             font-weight: 600;
-            font-size: 1.0em;
-            padding: 2px 6px;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
         }
 
-        .nav-link:hover {
-            background: #010807;
-            color: #cf0a09;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
-            border-color: #667eea;
+        .cc-text a:hover {
+            text-decoration: underline;
         }
 
-        .nav-link:active {
-            transform: translateY(0);
+        /* Remove Google Translate banner */
+        .goog-te-banner-frame.skiptranslate {
+            display: none !important;
         }
 
-        .current-image {
-            text-align: center;
-            margin: 0;
-            font-size: 1.2em;
-            color: #010807;
-            font-weight: 600;
-            min-width: 150px;
+        body {
+            top: 0px !important;
         }
 
         @media (max-width: 768px) {
             .container {
-                padding: 20px;
+                padding: 40px 30px;
+                padding-top: 80px;
+            }
+
+            #google_translate_element {
+                top: 10px;
+                right: 10px;
             }
 
             h1 {
-                font-size: 2em;
+                font-size: 2.2em;
             }
 
-            .intro-text {
-                font-size: 1em;
-            }
-
-            .comparison-wrapper {
-                height: 400px;
-            }
-
-            .image-btn {
-                width: 45px;
-                height: 45px;
-                font-size: 14px;
-            }
-
-            .label {
-                font-size: 0.9em;
-            }
-
-            .image-navigation {
-                gap: 15px;
-            }
-
-            .nav-link {
-                font-size: 1em;
-                padding: 6px 12px;
-            }
-
-            .current-image {
+            .subtitle {
                 font-size: 1.1em;
-                min-width: 120px;
+            }
+
+            .intro-section {
+                font-size: 1em;
+            }
+
+            .cta-button {
+                padding: 8px 15px;
+                font-size: 1em;
             }
         }
 
         @media (max-width: 480px) {
+            .container {
+                padding: 30px 20px;
+                padding-top: 70px;
+            }
+
             h1 {
-                font-size: 1.5em;
+                font-size: 1.8em;
             }
 
-            .comparison-wrapper {
-                height: 300px;
+            .subtitle {
+                font-size: 1em;
             }
 
-            .image-btn {
-                width: 40px;
-                height: 40px;
-                font-size: 13px;
+            .intro-section {
+                font-size: 0.95em;
+                line-height: 1.6;
             }
 
-            .label {
-                font-size: 0.8em;
+            .cta-button {
+                padding: 10px 25px;
+                font-size: 0.95em;
             }
 
-            .image-navigation {
-                flex-direction: column;
-                gap: 10px;
+            .cc-license {
+                font-size: 0.85em;
+                padding: 15px 10px;
             }
-
-            .current-image {
-                order: -1;
-                margin-bottom: 10px;
+            
+            .cc-logo img {
+                height: 25px;
             }
         }
-
-.zoom-controls {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-.zoom-btn {
-    width: 30px;
-    height: 30px;
-    border: 2px solid #ea8e66;
-    background: white;
-    color: #ea7e66;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.zoom-btn:hover {
-    background: #010827;
-    color: white;
-    transform: scale(1.1);
-}
-
-.zoom-btn:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-}
-
-.zoom-level {
-    padding: 8px 15px;
-    background: #f0f0f0;
-    border-radius: 20px;
-    font-size: 14px;
-    font-weight: 600;
-    color: #667eea;
-    display: flex;
-    align-items: center;
-}
-
-.comparison-wrapper.zoomed {
-    cursor: grab;
-    overflow: hidden;
-}
-
-.comparison-wrapper.zoomed:active {
-    cursor: grabbing;
-}
-
-.comparison-wrapper.zoomed img {
-    transition: transform 0.3s ease;
-}
-.keyboard-instructions {
-    background: #f0f0f0;
-    margin-bottom: 4px; 
-    padding: 2px 6px;
-    border-radius: 10px;
-    margin-top: 5px;
-    font-size: 0.9em;
-    color: #666;
-    text-align: center;
-}
-
-.keyboard-instructions strong {
-    color: #667eea;
-}
-
-.slideshow-controls {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 2px;
-    margin-bottom: 1px;
-    padding: 5px;
-    background: #ffffff;
-    border: 1px solid #e0e0e0;
-    border-radius: 10px;
-}
-
-.slideshow-btn {
-    width: 30px;
-    height: 30px;
-    border: 2px solid #667eea;
-    background: white;
-    color: #cf0a09;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 15px;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.slideshow-btn:hover {
-    background: #667eea;
-    color: white;
-    transform: scale(1.1);
-}
-
-.slideshow-btn.playing {
-    background: #cf0a09;
-    color: white;
-}
-
-.speed-control {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    min-width: 200px;
-}
-
-.speed-control label {
-    font-size: 14px;
-    font-weight: 600;
-    color: #667eea;
-    text-align: center;
-}
-
-#speedSlider {
-    width: 100%;
-    height: 4px;
-    border-radius: 5px;
-    background: #ddd;
-    outline: none;
-    -webkit-appearance: none;
-    cursor: pointer;
-}
-
-#speedSlider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    background: #667eea;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-#speedSlider::-webkit-slider-thumb:hover {
-    background: #764ba2;
-    transform: scale(1.2);
-}
-
-#speedSlider::-moz-range-thumb {
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    background: #667eea;
-    cursor: pointer;
-    border: none;
-    transition: all 0.3s ease;
-}
-
-#speedSlider::-moz-range-thumb:hover {
-    background: #764ba2;
-    transform: scale(1.2);
-}
-
-/*.progress-bar {
-    flex: 1;
-    height: 8px;
-    background: #ddd;
-    border-radius: 10px;
-    overflow: hidden;
-    max-width: 300px;
-} */
-
-.progress-fill {
-    height: 100%;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    width: 0%;
-    transition: width 0.1s linear;
-    border-radius: 10px;
-}
-
-@media (max-width: 768px) {
-    .slideshow-controls {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .speed-control {
-        width: 100%;
-        max-width: 250px;
-    }
-
-    .progress-bar {
-        width: 100%;
-        max-width: 250px;
-    }
-}
     </style>
 </head>
 <body>
     <div class="container">
+        <!-- Google Translate Element -->
+        <div id="google_translate_element"></div>
+
         <header>
-            <h1>Bearing witness in Kogilu Wastelands, Bengaluru</h1>
-            <p class="intro-text">
-                <i>..."For darkness restores what light cannot repair/<br>
-voiceless, negated by the real light."
-- Joseph Brodsky, On Love<i>
-            </p>
-            <div class="keyboard-instructions">
-    <strong>Keyboard shortcuts:</strong> 
-    Arrow keys to move slider • 
-    Shift + Arrows to change images • 
-    +/- to zoom • 
-    0 to reset zoom • 
-    Home/End for first/last image
-</div>
+            <h1>Bearing witness in Kogilu Wastelands</h1>
+            <div class="divider"></div>
+            <p class="subtitle2">This is a free-flowing record of my reflections following a visit to the vanished Waseem and Fakir colony, Kogilu Layout, Bengaluru, where hundreds of families reportedly lost their homes during a demolition drive carried out by the BBMP on 20 December 2025. The fact that I am publishing this account more than a month after the demolition, which razed two settlements to the ground, makes it clear that my intention is not particularly journalistic. Nor is this work academic, scholarly, or literary. What I attempt instead is to pose a few questions and explain why I chose to document what I saw and experienced in the way I did.<br>
+
+There are moments when I wish I had formal training in social science/ social work, writing and journalism. If by any chance you find mild flavours of it in this work, it is because of my uncle, friends and colleagues, whose conversations sparked my interest in these fields and shaped how I began to relook, listen, rethink, and record. I remain grateful to them, and above all, this work is a tribute to the people of Waseem and Fakir colony, who lost their homes but not their humility!.<br>
+-<i> Ajai Narendran, 07 February 2026, Bengaluru</i></p>
         </header>
+        
+          <div class="intro-section">
+            <p class="subtitle1">Incantation</p>
+ <pre class="poem-pre">"April is the cruellest month, breeding
+Lilacs out of the dead land, mixing
+Memory and desire, stirring
+Dull roots with spring rain."
+- T S Eliot, The Wasteland
+</pre>
+                 <p>
+                It was a world living in its ruins that Eliot spoke about in his poem The Waste Land. The motifs, metaphors, and implied meanings that follow the poem, beginning with “April is the cruellest month”, also reflect the inner turbulence he endured. It appears rather counterintuitive to call April the cruellest month because Spring, as we know, arrives as a corrective to winter’s stagnation and devastation. Spring stands for renewal, hope and resilience, overcoming the isolation and stillness that winter locks us in. Yet, calling April the cruellest month has much deeper bearings than meets the eye because the world as we see it and the world as we feel it need not always complement each other. 
+            </p>
 
-        <!-- Navigation links added here -->
-        <div class="image-navigation">
-            <a href="#" class="nav-link" id="prev-link">← Back</a>
-            <div class="current-image">Image <span id="current-number">1</span> of 54</div>
-            <a href="#" class="nav-link" id="next-link">Next →</a>
-        </div>
+            <p>
+                It appears that Eliot was writing about a world in which renewal itself had become a painful ordeal, forcing memory and desire to dwell in a landscape that could no longer sustain them, a landscape that overnight turned hostile. For the people in Waseem colony and Fakir colony, Kogilu layout, Bengaluru, December must have been the cruellest month, when they lost their homes in the peak of winter. In The Waste Land, winter offers a strange kind of seclusion. It allows the privileged to remain warm and enclosed; stagnation and isolation in one’s home is also protection and self-preservation. When Eliot, who survives the winter, finds April, the time of return and renewal, the cruellest, he is pointing to the ferocity of hope itself and what happens when hope and memory are forced back into a mindscape no longer capable of sustaining them. If that is the predicament of one who lives through winter in the safety of home, what then is the condition of those who lose even their shelter in the peak of winter? For them, December has already become the cruellest month, and the trauma they carry forward renders April not just indescribable but also unimaginable. Here, as I move further, I resort to these words of Ansel Adams:<i> “When words become unclear, I shall focus with photographs. You don’t make a photograph just with a camera. You bring to the act of photography all the pictures you have seen, the books you have read, the music you have heard, the people you have loved.” </i>
+            </p>
+ <p class="subtitle1">Background Story</p>
+ <pre class="poem-pre">"no one leaves home 
+unless home is the mouth of a shark"
+- Warsan Shire, Home
+</pre>
 
-        <div class="comparison-container">
-            <div class="comparison-wrapper" role="img" aria-label="Image comparison slider">
-    <img src="kimages/1.jpg" alt="Infrared color version of image 1" class="img-color" id="colorImg">
-    <img src="kimages/1bw.jpg" alt="Monochrome version of image 1" class="img-bw" id="bwImg">
-    <div class="slider" id="slider" role="slider" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" aria-label="Image comparison slider" tabindex="0"></div>
-</div>
+                    <p>
+                First, it popped up as a news alert. Then many followed, and even more surfaced while channel surfing on a lazy day in the last week of December 2025.  I dreaded venturing out during the coldest part of the year because I could afford to remain in my cosy home. A few taps on my mobile phone will deliver things to my door, and at the same pace, or even faster, I can swipe away the news alerts that flash and hook onto something more entertaining. I did both until I could no longer do it. What I saw and heard about the overnight eviction of over 400 families hit me hard in the most unexpected way when a sudden splash of cold water from the shower hit me like ice bullets as I turned the shower knob the wrong way, unawares. Turning the shower knob the proper desired way in the very next moment set things right for me. But the thought of all those families whose homes were razed to the ground on a winter dawn as Bengaluru was getting ready for Christmas and New Year froze me into a state of utter distress and restlessness until I set out to do something about it. The least I could do was to go there, be with them, and bear witness… hopefully recording their pain and plight in a way that captures their frozen mindscape, too! I choose to do it through a medium that is not conventionally used. I shall share my thoughts on it later on this page.
+            </p>
+            <p>
+                So, on December 31, 2025, I set out to Kogilu layout, where two settlements (Waseem colony and Fakir colony) were demolished a few days ago in the early hours of dawn. More than 400 families were rendered homeless, and there was no prior notice issued to them on this eviction move.  Homes vanished but addresses still exist on paper. I felt I had come to a place where addresses outlive houses and memories remain their only possession. The place where they lived for over twenty-five years, in the foothills of a stone quarry, is the location identified by the government to set up a waste processing plant. Not far away, I could see the high-rise apartment complexes digging their foundations even deeper into the rock bottom where people lived and lost. Here, the homeland of the displaced became the wasteland of the legitimate owners of a piece of land or a dwelling, the non-displaceable!
+            </p>
+            <p>
+             It was after 11 days of demolition that I visited the place, that is 11 days of being comfortably numb or prioritising what matters primarily to my own well-being. When I reached the site, I was quite overcome by indecision about whether to walk around there, how to talk to the people who had lost their homes overnight, and what to say. Since I had a camera with me, which I took out much later, I was even more petrified knowing that I was in a place where I expected people to be enraged and hostile. But what I saw and experienced was just the opposite. I did not find happy people (I didn’t find angry people either); sadness and gloom engulfed the whole place, but it did not outshine the kindness and a sense of brotherhood they extended to me all through. I explained to a few people I met there in the beginning that I am here to document their loss and pain through infrared photography<strong>(IR)</strong>. It was also made clear that I have no political affiliation or media representation. They gave consent to go ahead.
+            </p>
+            <p>
+               They were intrigued when I showed them the first picture I took because it was awash with red and white hues. A few of them asked, “Why is it all red?” I clarified to them how infrared photography works, and that it is the redness which gives it the effect to make an impact, to which they replied: “Yes, we need impact”. They accompanied me for some time, showing me around and making sure I could document it all unhindered. Many of them offered water and food; one came with an umbrella too, and I was allowed to move around on my own.</p>
+                <p>I can never forget an incident that I will cherish for a lifetime as one of the most pristine and courageous expressions of kindness: I was walking around with my camera, and I saw a girl in a burqa walking towards me, her gaze behind the veil seemed to be fixed on me and the camera. We crossed our path, and I felt relieved. Then she stepped back until we were face to face again, and in a swift, almost playful move, she lifted her face veil and asked, ‘Would you like some tea?’ It took me a while to politely decline, saying I had water and needed to get going.  I am still intrigued by the warmth, kindness and support they extended to me at a time when they themselves are thrown into utter loss, desolation and sadness. What I saw there were graceful losers still hopeful of the very system that let them down, kind people, holding no remorse despite the restrained grief and pain choking them every moment. What I saw and experienced seems to be a living testimony to what Leonard Cohen said:<i> “As I grew older, I understood that instructions came with this voice. What were these instructions? The instructions were never to lament casually. And if one is to express the great inevitable defeat that awaits us all, it must be done within the strict confines of dignity and beauty.”</i>
+            </p>
+            <p>
+                It was also very heartening to see many young officers from the Karnataka State Government on the site, each speaking to people who had lost their homes, documenting their details, and assuring them of support. People were flocking to these officers with whatever documents they could salvage from the demolition site; a few held printouts of Google Earth images on which they had marked the spot of their vanished homes. The eyes in the sky seem to be more benevolent and reassuring than the systemic eyes on the ground that turned a blind eye.
+            </p>
+            <p class="subtitle1">On Bearing Witness</p>
+ <pre class="poem-pre">“If there is anything good about exile, it is that it teaches one humility. One can even take it a step further and suggest that the exile’s is the ultimate lesson in that virtue. It accelerates one’s drift into isolation, an absolute perspective: into the condition at which all one is left with is oneself and one’s language, with nobody or nothing in between. Exile brings you overnight where it would normally take a lifetime to go.”
+- Joseph Brodsky, On Grief and Reason
+</pre>
+            <p>
+                To me, bearing witness means staying with lived reality long enough that it cannot be shelved merely as an incident, accident, or anomaly. This matters even more in contexts of forced displacement, eviction and homelessness because these happenings are often projected as systemic requirements, developmental procedures or isolated events. Bearing witness means to acknowledge that these happenings are human ruptures with long afterlives and ghostly returns.
 
+            </p>
+            <p>
+                When Primo Levi wrote, <i>“It happened, therefore it can happen again.”</i>, his assertion was not merely historical, but inherently ethical as well. Here, I think, bearing witness insists that testimony is necessary because systems tend to normalise loss and pain as an unavoidable outcome of law enforcement.
 
-<div class="zoom-controls">
-                <button class="zoom-btn" id="zoomOut" title="Zoom Out (-)">−</button>
-                <span class="zoom-level" id="zoomLevel">100%</span>
-                <button class="zoom-btn" id="zoomIn" title="Zoom In (+)">+</button>
-                <button class="zoom-btn" id="zoomReset" title="Reset Zoom (0)" style="width: auto; padding: 0 15px; border-radius: 20px;">Reset</button>
-            </div>
+            </p>
+            <p>
+                These are times when eviction and homelessness are increasingly obscured by the very words used to describe them- clearance, encroachment, relocation, beautification, etc. It appears that the language of progress and development does not include the grammar of rights, loss and pain. Bearing witness resists this obfuscation by focusing attention on what is usually excluded from policy discourse: continuity of home, memory, dignity,and ethical consideration.
+            </p>
+            <p>
+                The photographs in this collection ( linked at the end of this page)  were made with consent from people who lost their homes. I have tried my best not to fall into the lure of recording shock, pity or spectacle. My effort was to testify, through images, to the quiet, cumulative plight of displacement and the gravitating pain. Some had soiled documents held in hand, some had prints of satellite imagery, and all of them had the national identity document – the Aadhar card that bore the address of where they once lived and voted too! What I saw and felt could no longer limit displacement as simply loss of shelter, but as Hannah Arendt said,<i>”loss of the right to have rights”.</i> When you are evicted from the land where you exercised your right to vote based on the Aadhaar card issued with the address of the home now gone, it is not just eviction; it looks more like exile. What Edward Said remarked seems to be all the more relevant, even after four decades:<i> “Exile is strangely compelling to think about but terrible to experience. It is the unhealable rift forced between a human being and a native place, between the self and its true home: its essential sadness can never be surmounted.” </i>
+            </p>
+                 <p class="subtitle1">Infrared Photography, Perception, and Moral Attention – A personal testimony and reflections on the medium, method and relevance</p>
+ <pre class="poem-pre">"Needing to have reality confirmed and experience enhanced by photographs is an aesthetic consumerism to which everyone is now addicted. Industrial societies turn their citizens into image-junkies; it is the most irresistible form of mental pollution...to take a photograph is to participate in another person's mortality, vulnerability, mutability precisely by slicing out this moment and freezing it, all photographs testify to time's relentless melt.To suffer is one thing; another thing is living with the photographed images of suffering, which does not necessarily strengthen conscience and the ability to be compassionate. It can also corrupt them. Once one has seen such images, one has started down the road of seeing more - and more. Images transfix. Images anesthetize."
+-Susan Sontag, On Photography
+</pre>
+            <p>
+                I adopted infrared photography (IR) more as a perceptual intervention than as a stylistic choice. This project utilises IR photography not to depart from objective responsibility, but to address the limitation of conventional visual reporting: depiction in normal light (the visible light/ spectrum) seems to have dulled public attention to ongoing suffering.
 
-            <div class="slideshow-controls">
-                <button class="slideshow-btn" id="playPauseBtn" title="Start Slideshow">
-                    <span id="playIcon">▶</span>
-                    <span id="pauseIcon" style="display: none;">⏸</span>
-                </button>
-                <div class="speed-control">
-                    <label for="speedSlider">Speed: <span id="speedValue">5</span>s</label>
-                    <input type="range" id="speedSlider" min="3" max="10" value="5" step="1">
+            </p>
+            <p>
+                Before I was drawn to the surreal nature and experimental possibilities of infrared photography, I was intrigued and inspired by the work of <a href="https://theamericanreader.com/what-we-cant-see-on-photographer-richard-mosse/ " target="_blank">Richard Mosse,</a> whose infrared documentation of conflicts in Congo brought out the poignancy of war in a way never before seen. The bloodiness of war, in all its pathos, surfaced without showing bloodshed, challenging the notion that realism in journalism must conform to what the visible light reflects. But, with the deluge of such ‘realistic’ images beamed to us, I think we live in a chimaera-like existence where reality floats and fades like a tale stranger than fiction. Too much of it may lead to a state of dissociation from what is reported, requiring immediate intervention. So, the question is: Can we present another ambient reality that surfaces in the light we do not see, does what is perceived thus evoke a deeper sense of moral responsibility to bear witness and reach out? I think that Mosse’s work demonstrated that fidelity to lived experience and perception of its depictions is not always achieved through optical accuracy and direct mirroring. Sometimes it requires estrangement from all that we consider ‘normal’.
+
+            </p>
+            <p>             
+Ever since the advent of colour photography, images of destruction and suffering have circulated within the same visible spectrum (generally called ‘normal’ light) through which everyday life is experienced. There were numerous media reports on the demolition of the two colonies, accompanied by detailed video footage and photographs, that circulated for a few days. However, very little was discussed by the general public. Is it that familiarity dulls attention? Does repeated exposure to images rendered in ‘normal’ light normalise eviction, helplessness, homelessness and suffering? Does the realistic legitimacy of what is visually documented make what is thus seen legible but not necessarily felt? Has the visible light we revel in, with our ability to distinguish as many as ten million colours, induced more blindness within us? What is not felt, in the end, does not disappear; It decays into the silence with its own justifications or rational moorings. But silence is not an option here if you expect to be heard and seen when you are in distress.
+            </p>
+             <p>             
+This is where I find the relevance of infrared photography that I hope will disrupt this visual complacency. IR images reveal a world that exists alongside the visible one but remains unseen by the human eye. Just because we do not see it does not make it non-existent. It is quite possible that familiar scenes, if rendered in unfamiliar tonalities, can interrupt habitual seeing and force a moment of perceptual sensitisation and recalibration. Perhaps the viewer is nudged to look within with an introspective vigil and compelled to look at the images again- not for novelty or originality, but for meaning! 
+            </p>
+             <p>             
+The infrared images and their monochrome version in this project are not intended to aestheticise suffering. Instead, I hope they lead one to an inquiry: can photojournalism/photo documentation (if the intent is to mobilise support and initiate collective action beyond the scope of conventional depiction of reality) step beyond the conformist norms and comfort zones of commonly perceived realism? Perhaps this can evoke that sensibility and sensitivity to see beyond the obvious because when colour, light and surface no longer behave as expected, the image resists passive consumption. It demands attention, interpretation, and immediate action!
+            </p>
+             <p>             
+Eviction, displacement and homelessness do not culminate in a decisive moment. The aftermath of losing can persist as festering conditions that risk becoming visually normal or routine. Infrared photography introduces a controlled visual and, thereby, perceptual disruption. This, I believe, restores attentiveness without altering the scene's underlying facts visually. Apart from the parallel worlds that IR photography unveils, it also operates symbolically in such specific contexts of forced displacement and homelessness. IR photography brings to light, with a surreal touch, the plight, pain, and forlornness of evicted/ displaced people. The stark contrasts in the imagery are those very hues of pain and cries that go unnoticed.  It symbolises the lives rendered invisible by rules, policies, and bureaucratic entanglements. Adding to the quagmire is the conditioned indifference. The world as depicted in IR photography reveals a parallel reality of what exists within the city but outside its acknowledged frame.
+            </p>
+             <p>             
+In this collection, I have combined infrared images with their monochrome counterparts. While the absence of natural colour prevents emotional cues from being pre-scripted, I believe that the monochrome version highlights the stricken mindscapes of the people who lost their homes overnight. What remains is a lingering presence- “the ongoing moment”.  In this sense, this work aligns more with Geoff Dyer’s idea of the ongoing moment than with Henri Cartier-Bresson’s “decisive moment.” The latter (decisive moment) highlights an instant when form, event, and meaning converge in a fraction of a second, resolving into a visually compelling and narratively convincing image. This approach seems foundational to photojournalism, and I think it compresses complex human experience and predicaments into a single, culminating instant. The latter (ongoing moment), by contrast, resists this compression and consolidation. It acknowledges that many forms of loss, pain and suffering do not culminate in a single decisive moment. Instead, they unfold gradually without a narrative closure. Photographing through the lens of the ‘decisive moment’ may unintentionally aestheticise displacement, loss, pain, distress, and suffering, or turn them into a spectacle. Whereas the ‘ongoing approach’ prioritises presence over capture, continuity over climax, rights and dignity over shock. Thus, photographs gain meaning not from isolated frozen moments but from their placement within a sustained visual and ethical awareness. In contexts of forced displacement, this sustained attention becomes an act of bearing witness, not just as the event unfolds but also long after. The ‘ongoing moment’ acknowledges and honours the fact that, for those photographed, the moment does not end when the camera shutter closes.
+            </p>
+            <p>             
+My approach here is not to relegate objectivity to the realm of ‘not normally seen’. Instead, it is an attempt to make subjectivity explicit and accountable. My choice of infrared is a refusal to pretend that seeing is neutral; that what we see in the ‘normal’ light is all there is to objective reality. It is also driven by the question, ‘what would it be like if we dare to step outside the comfort zones of what we willingly remain confined to and care to see another coexistent reality in a different light?
+
+            </p>
+            <p>             
+Also, documenting the plight of evicted/displaced people through IR photography is not about making suffering a surreal spectacle, but about making indifference difficult, bearing witness, and acting forth the default moral imperative. In the buzzing, booming confusion of day-to-day life, it appears that normal light has allowed pain, suffering and pleas for help to fade into the background. It is then that, in the light we cannot see, how things are become a pathway to an ethical responsibility to re-engage with another poignant reality that coexists. This is also an attempt to acknowledge the other side of what has become too familiar to disturb
+            </p>
+            <p>             
+Navigation functionality has been added, allowing viewing a specific image in both its infrared and monochrome versions. I hope this may help you pause, reflect, and read more into the images. The missing colours may very well represent the hues of joy, peace and well-being that disappeared overnight from the life of evicted people.
+            </p>
+                  <p class="subtitle1">On processing the IR images</p>
+ <pre class="poem-pre">..."For darkness restores what light cannot repair/
+voiceless, negated by the real light."
+- Joseph Brodsky, On Love
+</pre>
+<p>To start with, I must tell you that IR photography that day was extremely difficult because my camera does not have a viewfinder; I had to rely fully on the numbers( exposure settings) barely visible on the live view screen. It was a sunny day with light falling directly on the camera's live screen, even though those numbers were often misread and so rest because they were misjudged. But despite all that, I was really surprised to see that almost all the photographs I got came out way better than expected, and they were the best images I ever got in such lighting conditions.</p>
+<p>I used a full-spectrum camera to shoot these images at wavelengths varying from 720 to 740nm. Such images are typically characterised by a predominance of red. So, the images need to be post-processed to bring out latent colour tones in a way that is expressive and reflective of the poignancy of what was seen and felt. All post-processing steps (which mainly included white balance correction, removal of chromatic aberration, tone adjustments, and channel swaps) were uniformly applied to each image as a whole. No images were cropped, and no part of the image was specifically highlighted or worked on. I felt that this approach would honour the fact that every bit of the space where the event unfolded and was photographed has a tale to tell, because it is there, where around 400 families lived for years and woke up one fateful dawn to see their homes razed to rubble.</p>
+<p>This web page and the image gallery are entirely hand-coded. I hope the navigation functionalities work well across devices. If you have any suggestions or would like to discuss on this project, please feel free to write to me at <a href="mailto:pilgrimhawk@gmail.com">pilgrimhawk@gmail.com</a> </p>
+<hr>
+<p>
+<pre class="poem-pre1">
+<strong><span style="font-size: .80em;">References - Books:</span></strong>
+<span style="font-size: .70em;">1.Hannah Arendt, The Origins of Totalitarianism</span>
+<span style="font-size: .70em;">2.Joseph Brodsky, On Grief and Reason</span>
+<span style="font-size: .70em;">3.Primo Levi, The Drowned and the Saved</span>
+<span style="font-size: .70em;">4.Edward W. Said, Reflections on Exile and Other Essays</span>
+<span style="font-size: .70em;">5.Susan Sontag, On Photography</span></pre>           
+</p>
+             <p>
+<pre class="poem-pre1">
+<strong><span style="font-size: .80em;">Further reading on Kogilu demolition:</span></strong>
+<span style="font-size: .70em;">1.<a href="https://www.deccanherald.com/india/karnataka/bengaluru/demolition-drive-in-bengalurus-kogilu-village-leaves-hundreds-homeless-3837928" target="_blank">Kogilu village leaves hundreds homeless</a></span>
+<span style="font-size: .70em;">2.<a href="https://www.thenewsminute.com/karnataka/bengaluru-demolition-hit-families-in-kogilu-hold-protest-over-shelter-and-aid" target="_blank">Bengaluru: Demolition-hit families in Kogilu hold protest over shelter and aid</a></span>
+<span style="font-size: .70em;">3.<a href="https://www.thehindu.com/news/national/karnataka/kogilu-demolition-only-29-families-may-get-houses/article70591796.ece" target="_blank">Kogilu demolition: Only 29 families may get houses</a></span>
+<span style="font-size: .70em;">4.<a href="https://www.newindianexpress.com/states/karnataka/2026/Jan/15/after-kogilu-drive-becc-orders-demolition-of-39-unauthorised-houses-in-bengalurus-horamavu" target="_blank">After Kogilu drive, BECC orders demolition of 39 unauthorised houses in Bengaluru's Horamavu</a></span>
+<span style="font-size: .70em;">5.<a href="https://www.deccanherald.com/india/karnataka/karnataka-high-court-saysevictees-rehabilitation-at-kogilu-layout-unfeasible-3886794" target="_blank">Karnataka High Court says evictees' rehabilitation at Kogilu Layout unfeasible</a></span></pre>
+               
+</p>
+            <p><strong>Note:</strong>
+                Note: The text and images on this website are <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">licensed</a> in a way that allows non-commercial use for academic, research, artistic, humanitarian and journalistic purposes without altering the text or images. If anyone needs high resolution version of these images totally free, please contact me.
+            </p>
+          
+            <p style="text-align: center;">
+                <a href="kogilu.html" class="cta-button">Enter the Wasteland →</a>
+            </p>
+
+            <!-- Creative Commons License -->
+            <div class="cc-license">
+                <div class="cc-license-content">
+                    <div class="cc-logo">
+                        <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="CC">
+                        <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="BY">
+                        <img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt="NC">
+                    </div>
+                    <div class="cc-text">
+                        This work is licensed under a 
+                        <a href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="license noopener noreferrer">
+                            Creative Commons Attribution-NonCommercial 4.0 International License
+                        </a>.<br>
+                        You are free to share and adapt this material for non-commercial purposes with attribution.<br>
+                        Contact: <a href="mailto:pilgrimhawk@gmail.com">pilgrimhawk@gmail.com</a>
+                    </div>
                 </div>
-                <div class="progress-bar">
-                    <div class="progress-fill" id="progressFill"></div>
-                </div>
-            </div>
-
-            <div class="image-labels">
-                <div class="label">Infrared(L to R)</div>
-                <div class="label1">Monochrome(R to L)</div>
             </div>
         </div>
-
-        <div class="image-selector" id="imageSelector"></div>
     </div>
 
-
-    <script>
-        const slider = document.getElementById('slider');
-        const bwImg = document.getElementById('bwImg');
-        const colorImg = document.getElementById('colorImg');
-        const currentNumber = document.getElementById('current-number');
-        const imageSelector = document.getElementById('imageSelector');
-        const comparisonWrapper = document.querySelector('.comparison-wrapper');
-        const prevLink = document.getElementById('prev-link');
-        const nextLink = document.getElementById('next-link');
-
-        let isDragging = false;
-        let currentImage = 1;
-
-             for (let i = 1; i <= 54; i++) {
-    const btn = document.createElement('button');
-    btn.className = 'image-btn';
-    btn.textContent = i;
-    btn.setAttribute('aria-label', `Load image ${i}`);
-    btn.setAttribute('aria-pressed', i === 1 ? 'true' : 'false');
-    btn.onclick = () => loadImage(i);
-    imageSelector.appendChild(btn);
-}
-               document.querySelector('.image-btn').classList.add('active');
-
-        function loadImage(num) {
-    currentImage = num;
-    colorImg.src = `kimages/${num}.jpg`;
-    colorImg.alt = `Infrared color version of image ${num}`;
-    bwImg.src = `kimages/${num}bw.jpg`;
-    bwImg.alt = `Monochrome version of image ${num}`;
-    currentNumber.textContent = num;
-
-           document.querySelectorAll('.image-btn').forEach((btn, index) => {
-        btn.classList.toggle('active', index + 1 === num);
-        btn.setAttribute('aria-pressed', index + 1 === num);
-    });
-}
-
-      function updateSlider(x) {
-    const rect = comparisonWrapper.getBoundingClientRect();
-    let position = ((x - rect.left) / rect.width) * 100;
-    position = Math.max(0, Math.min(100, position));
-    
-    slider.style.left = position + '%';
-    slider.setAttribute('aria-valuenow', Math.round(position));
-    colorImg.style.clipPath = `inset(0 ${100 - position}% 0 0)`;
-}
-    
-        slider.addEventListener('mousedown', () => {
-            isDragging = true;
-        });
-
-        document.addEventListener('mousemove', (e) => {
-            if (isDragging) {
-                updateSlider(e.clientX);
-            }
-        });
-
-        document.addEventListener('mouseup', () => {
-            isDragging = false;
-        });
-
-      
-        slider.addEventListener('touchstart', (e) => {
-            isDragging = true;
-            e.preventDefault();
-        });
-
-        document.addEventListener('touchmove', (e) => {
-            if (isDragging) {
-                updateSlider(e.touches[0].clientX);
-            }
-        });
-
-        document.addEventListener('touchend', () => {
-            isDragging = false;
-        });
-
- 
-        comparisonWrapper.addEventListener('click', (e) => {
-            updateSlider(e.clientX);
-        });
-      
-document.addEventListener('keydown', (e) => {
-    switch(e.key) {
-        case 'ArrowLeft':
-           
-            if (e.shiftKey) {
-                loadImage(currentImage > 1 ? currentImage - 1 : 54);
-            } else {
-                const rect = comparisonWrapper.getBoundingClientRect();
-                const currentPos = parseFloat(slider.style.left) || 50;
-                updateSlider(rect.left + (rect.width * (currentPos - 2) / 100));
-            }
-            break;
-        case 'ArrowRight':
-           
-            if (e.shiftKey) {
-                loadImage(currentImage < 54 ? currentImage + 1 : 1);
-            } else {
-                const rect = comparisonWrapper.getBoundingClientRect();
-                const currentPos = parseFloat(slider.style.left) || 50;
-                updateSlider(rect.left + (rect.width * (currentPos + 2) / 100));
-            }
-            break;
-        case 'Home':
-            loadImage(1);
-            break;
-        case 'End':
-            loadImage(54);
-            break;
-    }
-});
-
-let zoomLevel = 1;
-let isPanning = false;
-let panStartX = 0;
-let panStartY = 0;
-let panX = 0;
-let panY = 0;
-
-const zoomInBtn = document.getElementById('zoomIn');
-const zoomOutBtn = document.getElementById('zoomOut');
-const zoomResetBtn = document.getElementById('zoomReset');
-const zoomLevelDisplay = document.getElementById('zoomLevel');
-
-function updateZoom() {
-    colorImg.style.transform = `scale(${zoomLevel}) translate(${panX}px, ${panY}px)`;
-    bwImg.style.transform = `scale(${zoomLevel}) translate(${panX}px, ${panY}px)`;
-    zoomLevelDisplay.textContent = Math.round(zoomLevel * 100) + '%';
-    
-   
-    zoomOutBtn.disabled = zoomLevel <= 1;
-    zoomInBtn.disabled = zoomLevel >= 3;
-    
-  
-    if (zoomLevel > 1) {
-        comparisonWrapper.classList.add('zoomed');
-    } else {
-        comparisonWrapper.classList.remove('zoomed');
-        panX = 0;
-        panY = 0;
-    }
-}
-
-zoomInBtn.addEventListener('click', () => {
-    if (zoomLevel < 3) {
-        zoomLevel += 0.25;
-        updateZoom();
-    }
-});
-
-zoomOutBtn.addEventListener('click', () => {
-    if (zoomLevel > 1) {
-        zoomLevel -= 0.25;
-        updateZoom();
-    }
-});
-
-zoomResetBtn.addEventListener('click', () => {
-    zoomLevel = 1;
-    panX = 0;
-    panY = 0;
-    updateZoom();
-});
-
-
-document.addEventListener('keydown', (e) => {
-    if (e.key === '+' || e.key === '=') {
-        zoomInBtn.click();
-    } else if (e.key === '-') {
-        zoomOutBtn.click();
-    } else if (e.key === '0') {
-        zoomResetBtn.click();
-    }
-});
-
-
-comparisonWrapper.addEventListener('mousedown', (e) => {
-    if (zoomLevel > 1 && !e.target.closest('.slider')) {
-        isPanning = true;
-        panStartX = e.clientX - panX;
-        panStartY = e.clientY - panY;
-        e.preventDefault();
-    }
-});
-
-document.addEventListener('mousemove', (e) => {
-    if (isPanning) {
-        panX = e.clientX - panStartX;
-        panY = e.clientY - panStartY;
-        
-   
-        const maxPan = 200 * (zoomLevel - 1);
-        panX = Math.max(-maxPan, Math.min(maxPan, panX));
-        panY = Math.max(-maxPan, Math.min(maxPan, panY));
-        
-        updateZoom();
-    }
-});
-
-document.addEventListener('mouseup', () => {
-    isPanning = false;
-});
-
-
-comparisonWrapper.addEventListener('wheel', (e) => {
-    e.preventDefault();
-    if (e.deltaY < 0 && zoomLevel < 3) {
-        zoomLevel += 0.1;
-    } else if (e.deltaY > 0 && zoomLevel > 1) {
-        zoomLevel -= 0.1;
-    }
-    zoomLevel = Math.max(1, Math.min(3, zoomLevel));
-    updateZoom();
-}, { passive: false });
-
-
-prevLink.addEventListener('click', (e) => {
-    e.preventDefault();
-    const prevImage = currentImage > 1 ? currentImage - 1 : 54;
-    loadImage(prevImage);
-});
-
-nextLink.addEventListener('click', (e) => {
-    e.preventDefault();
-    const nextImage = currentImage < 54 ? currentImage + 1 : 1;
-    loadImage(nextImage);
-});
-
-
-const originalLoadImageBase = loadImage;
-
-
-loadImage = function(num) {
-    // Check if this is a manual click (stop slideshow)
-    const isManualClick = window.event && window.event.type === 'click' && 
-                          (window.event.target.classList.contains('image-btn') ||
-                           window.event.target.classList.contains('nav-link'));
-    
-    if (isPlaying && isManualClick) {
-        stopSlideshow();
-    }
-    
-   
-    originalLoadImageBase(num);
-    
-    // Reset zoom (if zoom functionality exists)
-    if (typeof zoomLevel !== 'undefined') {
-        zoomLevel = 1;
-        panX = 0;
-        panY = 0;
-        updateZoom();
-    }
-};
-
-let slideshowInterval = null;
-let slideshowSpeed = 5000; // Default 5 seconds
-let isPlaying = false;
-let progressInterval = null;
-let progressValue = 0;
-
-const playPauseBtn = document.getElementById('playPauseBtn');
-const playIcon = document.getElementById('playIcon');
-const pauseIcon = document.getElementById('pauseIcon');
-const speedSlider = document.getElementById('speedSlider');
-const speedValue = document.getElementById('speedValue');
-const progressFill = document.getElementById('progressFill');
-
-
-speedSlider.addEventListener('input', (e) => {
-    slideshowSpeed = parseInt(e.target.value) * 1000;
-    speedValue.textContent = e.target.value;
-    
-   
-    if (isPlaying) {
-        stopSlideshow();
-        startSlideshow();
-    }
-});
-
-
-playPauseBtn.addEventListener('click', () => {
-    if (isPlaying) {
-        stopSlideshow();
-    } else {
-        startSlideshow();
-    }
-});
-
-function startSlideshow() {
-    isPlaying = true;
-    playPauseBtn.classList.add('playing');
-    playIcon.style.display = 'none';
-    pauseIcon.style.display = 'inline';
-    
-
-    progressValue = 0;
-    updateProgress();
-    
-   
-    slideshowInterval = setInterval(() => {
-        const nextImage = currentImage < 54 ? currentImage + 1 : 1;
-        loadImage(nextImage);
-        progressValue = 0;
-    }, slideshowSpeed);
-    
-
-    progressInterval = setInterval(() => {
-        progressValue += (100 / (slideshowSpeed / 100));
-        if (progressValue >= 100) {
-            progressValue = 0;
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
         }
-        updateProgress();
-    }, 100);
-}
+    </script>
 
-function stopSlideshow() {
-    isPlaying = false;
-    playPauseBtn.classList.remove('playing');
-    playIcon.style.display = 'inline';
-    pauseIcon.style.display = 'none';
-    
-    clearInterval(slideshowInterval);
-    clearInterval(progressInterval);
-    slideshowInterval = null;
-    progressInterval = null;
-    progressValue = 0;
-    updateProgress();
-}
-
-function updateProgress() {
-    progressFill.style.width = progressValue + '%';
-}
-
-
-const originalLoadImageForSlideshow = loadImage;
-loadImage = function(num) {
-    // Check if this is a manual click (not from slideshow)
-    if (isPlaying && event && event.type === 'click') {
-        stopSlideshow();
-    }
-    originalLoadImageForSlideshow(num);
-};
-
-
-document.addEventListener('keydown', (e) => {
-    if (e.code === 'Space' && e.target.tagName !== 'INPUT') {
-        e.preventDefault();
-        playPauseBtn.click();
-    }
-});
-        </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
